@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse - CodeLearn</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Crear cuenta</h2>
+
+        <div class="formulario">
+            <input type="text" id="nombre" placeholder="Nombre">
+            <input type="text" id="apellidos" placeholder="Apellidos">
+            <input type="text" id="alias" placeholder="Alias (nombre de usuario)">
+            <input type="email" id="email" placeholder="Correo electrónico">
+            <input type="password" id="password" placeholder="Contraseña">
+            <input type="password" id="passwordConfirm" placeholder="Confirmar contraseña">
+            <input type="date" id="fechaNacimiento">
+
+            <select id="perfil">
+                <option value="">-- Perfil --</option>
+                <option value="estudiante">Estudiante</option>
+                <option value="profesor">Profesor</option>
+            </select>
+
+            <select id="centro">
+                <option value="">-- Centro educativo --</option>
+                <option value="ies_mutxamel">IES Mutxamel</option>
+                <option value="otros">Otros</option>
+            </select>
+
+            <button id="btnRegistrar">Registrarme</button>
+        </div>
+
+        <p>¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a></p>
+    </div>
+
+    <script>
+
+        const btnRegistrar = document.getElementById("btnRegistrar");
+
+        btnRegistrar.addEventListener("click", function() {
+
+            // Recogemos los valores de los campos
+            let nombre          = document.getElementById("nombre").value;
+            let apellidos       = document.getElementById("apellidos").value;
+            let alias           = document.getElementById("alias").value;
+            let email           = document.getElementById("email").value;
+            let password        = document.getElementById("password").value;
+            let passwordConfirm = document.getElementById("passwordConfirm").value;
+            let fechaNacimiento = document.getElementById("fechaNacimiento").value;
+            let perfil          = document.getElementById("perfil").value;
+            let centro          = document.getElementById("centro").value;
+
+            // Comprobamos que todos los campos están rellenos
+            if (nombre === "" || apellidos === "" || alias === "" || email === "" ||
+                password === "" || passwordConfirm === "" || fechaNacimiento === "" ||
+                perfil === "" || centro === "") {
+                alert("Por favor, rellena todos los campos.");
+                return;
+            }
+
+            // Comprobamos que las contraseñas coinciden
+            if (password !== passwordConfirm) {
+                alert("Las contraseñas no coinciden.");
+                return;
+            }
+
+            // Creamos el objeto usuario con todos los datos
+            let usuario = {
+                nombre:          nombre,
+                apellidos:       apellidos,
+                alias:           alias,
+                email:           email,
+                password:        password,
+                fechaNacimiento: fechaNacimiento,
+                perfil:          perfil,
+                centro:          centro
+            };
+
+            // Guardamos el objeto en localStorage como texto (JSON.stringify)
+            // El profesor indica en el PDF usar localStorage para guardar los datos
+            localStorage.setItem("usuario", JSON.stringify(usuario));
+
+            // Simulamos el envío de email de confirmación
+            alert("¡Registro completado! Se ha enviado un email de confirmación a: " + email);
+
+            // Redirigimos al login
+            window.location.href = "login.html";
+        });
+
+    </script>
+
+</body>
+</html>
