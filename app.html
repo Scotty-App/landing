@@ -2,56 +2,42 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>App - CodeLearn</title>
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-
     <div class="container">
-
-        <!-- Mostramos el nombre del usuario si está logueado -->
         <h2 id="saludo">¡Hola! ¿Qué deseas aprender?</h2>
 
-        <!-- Botones de lenguajes, de momento solo muestran el nombre -->
-        <div class="grid-lenguajes">
-            <button class="btn-lenguaje">Python</button>
-            <button class="btn-lenguaje">HTML</button>
-            <button class="btn-lenguaje">CSS</button>
-            <button class="btn-lenguaje">JavaScript</button>
-            <button class="btn-lenguaje">Java</button>
-            <button class="btn-lenguaje">SQL</button>
-            <button class="btn-lenguaje">C++</button>
-            <button class="btn-lenguaje">C</button>
-            <button class="btn-lenguaje">PHP</button>
-        </div>
+        <button class="btn-lenguaje">Python</button>
+        <button class="btn-lenguaje">HTML</button>
+        <button class="btn-lenguaje">CSS</button>
+        <button class="btn-lenguaje">JavaScript</button>
+        <button class="btn-lenguaje">Java</button>
+        <button class="btn-lenguaje">SQL</button>
+        <button class="btn-lenguaje">C++</button>
+        <button class="btn-lenguaje">C</button>
+        <button class="btn-lenguaje">PHP</button>
 
-        <br>
+        <br><br>
         <button onclick="window.location.href='index.html'">Volver al inicio</button>
-
     </div>
 
     <script>
+        // Si hay usuario logueado mostramos su nombre
+        let usuario = JSON.parse(localStorage.getItem("usuario"));
 
-        // Leemos el usuario de localStorage para mostrar su nombre
-        let usuarioGuardado = JSON.parse(localStorage.getItem("usuario"));
-
-        if (usuarioGuardado !== null) {
+        if (usuario !== null) {
             document.getElementById("saludo").textContent =
-                "¡Hola, " + usuarioGuardado.nombre + "! ¿Qué deseas aprender?";
+                "¡Hola, " + usuario.nombre + "! ¿Qué deseas aprender?";
         }
+        let botones = document.querySelectorAll(".btn-lenguaje");
 
-        // Añadimos evento a todos los botones de lenguaje con querySelectorAll
-        // De momento solo muestran un alert con el nombre del lenguaje
-        let botonesLenguaje = document.querySelectorAll(".btn-lenguaje");
-
-        botonesLenguaje.forEach(function(boton) {
+        botones.forEach(function(boton) {
             boton.addEventListener("click", function() {
                 alert("Has seleccionado: " + boton.textContent);
             });
         });
-
     </script>
-
 </body>
 </html>
