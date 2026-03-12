@@ -1,13 +1,10 @@
 # CodeLearn - Frontend
 
-
 ## Tecnologías utilizadas
 
 - HTML5
 - CSS3
 - JavaScript (vanilla)
-
----
 
 ## Estructura del proyecto
 
@@ -18,8 +15,6 @@
 ├── app.html         → Aplicativo con los lenguajes disponibles
 └── estilo.css       → Estilos compartidos
 ```
-
----
 
 ## Cómo funciona
 
@@ -34,14 +29,11 @@
 
 4. En `app.html` ve los lenguajes disponibles y su nombre de usuario si está registrado.
 
----
 
 ## Almacenamiento de datos
 
 Los datos del usuario se guardan en `localStorage` del navegador.  
 No requiere servidor ni base de datos.
-
----
 
 ## Módulo
 
