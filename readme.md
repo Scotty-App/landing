@@ -1,8 +1,5 @@
 # CodeLearn - Frontend
 
-Proyecto intermodular de 1º DAW.  
-Aplicación web para aprender lenguajes de programación de forma interactiva.
-
 ---
 
 ## Tecnologías utilizadas
