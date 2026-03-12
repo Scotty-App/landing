@@ -1,73 +1,36 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: #1a1a2e;
-    color: white;
-    margin-top: 60px;
+    background-color: lightblue;
+    margin-top: 50px;
 }
 
-/* Contenedor principal centrado */
 .container {
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 30px;
+    background-color: white;
+    padding: 20px;
     border-radius: 10px;
     display: inline-block;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
 }
 
-/* Botones generales */
+input, select {
+    display: block;
+    margin: 10px auto;
+    padding: 8px;
+    font-size: 15px;
+    width: 250px;
+}
+
 button {
+    margin: 5px;
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 15px;
     background-color: #1DA1F2;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin: 5px;
 }
 
 button:hover {
     background-color: #0d8bdb;
-}
-
-/* Formularios (signup y login) */
-.formulario {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin: 20px 0;
-}
-
-.formulario input,
-.formulario select {
-    padding: 10px;
-    font-size: 15px;
-    border-radius: 5px;
-    border: none;
-    width: 280px;
-}
-
-/* Botones de la landing */
-.botones {
-    margin-top: 20px;
-}
-
-/* Grid de lenguajes en la app */
-.grid-lenguajes {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.btn-lenguaje {
-    padding: 20px;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-/* Links */
-a {
-    color: #1DA1F2;
 }
