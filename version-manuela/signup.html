@@ -9,12 +9,12 @@
     <div class="container">
         <h2>Crear cuenta</h2>
 
-        <input type="text"     id="nombre"          placeholder="Nombre">
-        <input type="text"     id="apellidos"        placeholder="Apellidos">
-        <input type="text"     id="alias"            placeholder="Alias">
-        <input type="email"    id="email"            placeholder="Email">
-        <input type="password" id="password"         placeholder="Contraseña">
-        <input type="password" id="passwordConfirm"  placeholder="Confirmar contraseña">
+        <input type="text"     id="nombre"         placeholder="Nombre">
+        <input type="text"     id="apellidos"       placeholder="Apellidos">
+        <input type="text"     id="alias"           placeholder="Alias">
+        <input type="email"    id="email"           placeholder="Email">
+        <input type="password" id="password"        placeholder="Contraseña">
+        <input type="password" id="passwordConfirm" placeholder="Confirmar contraseña">
         <input type="date"     id="fechaNacimiento">
 
         <select id="perfil">
@@ -36,17 +36,16 @@
     <script>
         document.getElementById("btnRegistrar").addEventListener("click", function() {
 
-            let nombre         = document.getElementById("nombre").value;
-            let apellidos      = document.getElementById("apellidos").value;
-            let alias          = document.getElementById("alias").value;
-            let email          = document.getElementById("email").value;
-            let password       = document.getElementById("password").value;
-            let passwordConfirm= document.getElementById("passwordConfirm").value;
-            let fechaNacimiento= document.getElementById("fechaNacimiento").value;
-            let perfil         = document.getElementById("perfil").value;
-            let centro         = document.getElementById("centro").value;
+            let nombre          = document.getElementById("nombre").value;
+            let apellidos       = document.getElementById("apellidos").value;
+            let alias           = document.getElementById("alias").value;
+            let email           = document.getElementById("email").value;
+            let password        = document.getElementById("password").value;
+            let passwordConfirm = document.getElementById("passwordConfirm").value;
+            let fechaNacimiento = document.getElementById("fechaNacimiento").value;
+            let perfil          = document.getElementById("perfil").value;
+            let centro          = document.getElementById("centro").value;
 
-            // Comprobamos que no hay campos vacíos
             if (nombre === "" || apellidos === "" || alias === "" || email === "" ||
                 password === "" || passwordConfirm === "" || fechaNacimiento === "" ||
                 perfil === "" || centro === "") {
@@ -54,25 +53,20 @@
                 return;
             }
 
-            // Comprobamos que las contraseñas coinciden
             if (password !== passwordConfirm) {
                 alert("Las contraseñas no coinciden.");
                 return;
             }
 
-            // Guardamos los datos en localStorage como objeto
-            let usuario = {
-                nombre: nombre,
-                apellidos: apellidos,
-                alias: alias,
-                email: email,
-                password: password,
-                fechaNacimiento: fechaNacimiento,
-                perfil: perfil,
-                centro: centro
-            };
-
-            localStorage.setItem("usuario", JSON.stringify(usuario));
+            // Guardamos cada dato por separado en localStorage
+            localStorage.setItem("nombre", nombre);
+            localStorage.setItem("apellidos", apellidos);
+            localStorage.setItem("alias", alias);
+            localStorage.setItem("email", email);
+            localStorage.setItem("password", password);
+            localStorage.setItem("fechaNacimiento", fechaNacimiento);
+            localStorage.setItem("perfil", perfil);
+            localStorage.setItem("centro", centro);
 
             alert("Registro completado. Email de confirmación enviado a: " + email);
             window.location.href = "login.html";
