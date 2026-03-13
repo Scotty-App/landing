@@ -7,6 +7,7 @@
 </head>
 <body>
     <div class="container">
+
         <h2 id="saludo">¡Hola! ¿Qué deseas aprender?</h2>
 
         <button class="btn-lenguaje">Python</button>
@@ -24,12 +25,12 @@
     </div>
 
     <script>
-        // Si hay usuario logueado mostramos su nombre
-        let usuario = JSON.parse(localStorage.getItem("usuario"));
+        // Leemos el nombre guardado en localStorage
+        let nombre = localStorage.getItem("nombre");
 
-        if (usuario !== null) {
+        if (nombre !== null) {
             document.getElementById("saludo").textContent =
-                "¡Hola, " + usuario.nombre + "! ¿Qué deseas aprender?";
+                "¡Hola, " + nombre + "! ¿Qué deseas aprender?";
         }
 
         // Evento para todos los botones de lenguaje
